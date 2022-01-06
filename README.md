@@ -3,7 +3,7 @@
 ## Website Link
 [https://enc-test-project2022.web.app](https://enc-test-project2022.web.app).
 
-email - feelrestaurant@gmail.com
+email - feelrestaurant@gmail.com<br />
 password - 123456
 
 ## Finished Tasks
@@ -12,7 +12,7 @@ password - 123456
    - Login with email & password
    - Login with Google
    - Logout
-![This is an image](https://firebasestorage.googleapis.com/v0/b/enc-test-project2022.appspot.com/o/screenshots%2F01login.jpg?alt=media&token=f071e669-5746-4e5c-98fb-60675b1e10b8)
+![This is an image](https://firebasestorage.googleapis.com/v0/b/enc-test-project2022.appspot.com/o/screenshots%2F01login.jpg?alt=media&token=f05f3bfd-3e27-4edc-9a10-6c0dd7ceadc5)
 
 ###### 2. Menu
    - Insert Menu (including upload image)
