@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant App | Menu</title>
+  </head>
+<body>
+
+  <header class="navbar navbar-dark sticky-top bg-dark p-3 flex-md-nowrap shadow">
+    <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand col-md-3 col-lg-2 px-2" href="index.html">Restaurant App</a>
+    <div class="dropdown">
+      <!-- For Desktop View -->
+      <a href="#" class="d-none d-sm-block text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://firebasestorage.googleapis.com/v0/b/enc-test-project2022.appspot.com/o/images%2Fprofile.png?alt=media&token=e93d5859-f79f-4a56-bef9-782d882b4c2e" alt="profile" width="32" height="32" class="rounded-circle">
+        <span class="user-email"></span>
+      </a>
+      <!-- For Mobile View -->
+      <a href="#" class="d-block d-sm-none text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://firebasestorage.googleapis.com/v0/b/enc-test-project2022.appspot.com/o/images%2Fprofile.png?alt=media&token=e93d5859-f79f-4a56-bef9-782d882b4c2e" alt="profile" width="32" height="32" class="rounded-circle">
+      </a>
+      <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+        <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a id="logout-btn" class="dropdown-item" href="javascript:;">Sign out</a></li>
+      </ul>
+    </div>
+  </header>
+  
+  <div class="container-fluid">
+    <div class="row">
+
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="index.html">
+                <i class="bi bi-speedometer2 pe-2"></i>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="menu.html">
+                <i class="bi bi-grid-3x3-gap pe-2"></i>
+                Menu
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="customer.html">
+                <i class="bi bi-people pe-2"></i>
+                Customer
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav> <!-- end of sidebar -->
+  
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="height: 90vh;">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Menu List</h1>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#menu-add-modal">Add Menu</button>
+        </div>
+        <div class="d-flex">
+          <form id="menu-search-form">
+            <div class="input-group">
+              <b class="pt-1">Search by:</b>
+              <input type="text" class="form-control ms-2" placeholder="Keyword ..." id="search-input">
+              <button class="btn btn-outline-secondary" type="submit" id="search-button"><i class="bi bi-search"></i></button>
+            </div>
+          </form>
+        </div>
+        <table id="menu-table" class="table table-striped">
+          <thead>
+              <tr>
+                <th scope="col">Photo</th>
+                <th scope="col"><span orderBy="name" orderAs="desc" class="sort-col cursor-pointer">Name <i class="bi bi-caret-down-fill"></i></span></th>
+                <th scope="col"><span orderBy="price" orderAs="desc" class="sort-col cursor-pointer">Price </span></th>
+                <th scope="col">Description</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td colspan="5" class="text-center">No Such Data!</td>
+              </tr>
+          </tbody>
+        </table>
+      </main> <!-- end of main -->
+
+    </div> <!-- end of row -->
+  </div> <!-- end of container -->
+
+  <!-- Add Modal -->
+  <div class="modal fade" id="menu-add-modal" data-bs-keyboard="false" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Menu Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="menu-add-form">
+          <div class="modal-body">
+            <div class="mb-3">
+              <div class="upload-area">
+                <div class="btn-block">
+                  <label for="file-upload"><i class="bi bi-cloud-upload"></i> Select Image</label>
+                  <input id="file-upload" type="file"/>
+                </div>
+                <div class="img-block"><img></div>
+              </div>
+              <div class="file-name"></div> <span class="up-progress"></span>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
+              <!-- <label class="error">Name is required.</label> -->
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input type="number" class="form-control" id="price" required>
+              <!-- <label class="error">Price is required.</label> -->
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description" row="5"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+             <!-- loading -->
+            <div id="my-loading">
+              <div class="spinner-border" role="status">
+                <span class="sr-only"></span>
+              </div>
+              <span>Saving ...</span>
+            </div>  
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="bundle.js"></script>
+
+</body>
+</html>
